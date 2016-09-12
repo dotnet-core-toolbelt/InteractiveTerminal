@@ -9,10 +9,11 @@ namespace ConsoleApp5
     public class Program
     {
 
-        public static void Show(List<string> list, int? item = null)
-        {
 
+        public static void Main(string[] args)
+        {
             Console.Clear();
+            Console.CursorVisible = false;
 
             List<Iteration> iterations = new List<Iteration>();
 
@@ -35,85 +36,136 @@ namespace ConsoleApp5
             iterations.Add(second);
             iterations.Add(third);
 
-
-            foreach(var iteration in iterations){
+            var iterationNo = 0;
+            foreach (var iteration in iterations)
+            {
+                iterationNo++;
 
                 var defaultColor = Console.ForegroundColor;
 
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write( "? " );
+
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write("? ");
                 Console.ForegroundColor = defaultColor;
 
-            }
-
-
-
-
-
-
-
-            Console.Clear();
-            for (int i = 0; i < list.Count; i++)
-            {
-                //var padd = String.Concat(Enumerable.Repeat(" ", leftPadding));
-                //var num = setNumber ? i + 1 + ". " : "";
-                if (i == list.Count - 1)
+                if (iteration.IsSelectable)
                 {
-                    if (item == null || i + 1 != item)
-                        Console.ForegroundColor = ConsoleColor.White;
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
 
+                    Console.WriteLine(iteration.Question + " (use arrow keys) ");
+
+                    var selectedId = 0;
+
+                    showList(iteration, selectedId);
+
+                    while (true)
+                    {
+                        ConsoleKeyInfo info = Console.ReadKey();
+
+                        switch (info.Key)
+                        {
+                            case ConsoleKey.UpArrow:
+                                selectedId--;
+                                break;
+                            case ConsoleKey.DownArrow:
+                                selectedId++;
+                                break;
+                        }
+
+                        if (selectedId >= iteration.Steps.Count) selectedId = iteration.Steps.Count - 1;
+                        if (selectedId < 0) selectedId = 0;
+
+                        if (info.Key == ConsoleKey.Enter)
+                        {
+                            iteration.SelectedStep = iteration.Steps[selectedId];
+                            break;
+                        }
+
+                        showList(iteration, selectedId, true);
                     }
-                    Console.Write(list[i]);
+
+                    clearIteration(iteration, iterationNo);
+
                 }
                 else
                 {
-                    if (item == null || i + 1 != item)
-                        Console.ForegroundColor = ConsoleColor.White;
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-
-                    }
-                    Console.WriteLine(list[i]);
-
-
+                    Console.CursorVisible = true;
+                    Console.Write(iteration.Question);
+                    var value = Console.ReadLine();
+                    iteration.InputValue = value;
+                    Console.CursorVisible = false;
+                    continue;
                 }
+
+
+
             }
+
+
+            var index = 1;
+            foreach( var iteration in iterations ){
+
+                if( iteration.IsSelectable ){
+                    Console.WriteLine($"Selected Step {index} is  : " + iteration.SelectedStep.Title);
+                }
+                else{
+                    Console.WriteLine($"Selected Step {index} is  : " + iteration.InputValue);
+                }
+
+            }
+
+
+            Console.WriteLine("Press any key to exit...");
+            Console.Read();
+
         }
 
-        public static void Main(string[] args)
+        private static void clearIteration(Iteration iteration, int iterationNo)
+        {
+            var startLine = Console.CursorTop - iteration.Steps.Count - iterationNo;
+
+            if (startLine < iterationNo) startLine = iterationNo;
+
+            var endLine = startLine + iteration.Steps.Count;
+
+            for (var i = startLine; i < endLine; i++)
+            {
+                Console.SetCursorPosition(0, i);
+                Console.Write(new String(' ', Console.BufferWidth));
+            }
+
+            var top = Console.CursorTop - iteration.Steps.Count + iterationNo - 1;
+
+            if (top < iterationNo) top = iterationNo;
+
+            Console.SetCursorPosition(0, top);
+
+        }
+
+        private static void showList(Iteration iteration, int selected, bool isReshow = false)
         {
 
-            var list = new[] { "A", "B", "C", "D", "E" }.ToList();
-
-            Show(list, 1);
-
-            while (true)
+            if (isReshow)
             {
-
-                ConsoleKeyInfo keyInfo = Console.ReadKey();
-                if (keyInfo.Key == ConsoleKey.UpArrow)
-                {
-                    var item = Console.CursorTop;
-                    Show(list, item);
-                    Console.SetCursorPosition(3, item - 1);
-
-                }
-                if (keyInfo.Key == ConsoleKey.DownArrow)
-                {
-                    var item = Console.CursorTop;
-                    if (item + 1 < list.Count)
-                    {
-                        Show(list, item + 2);
-                        Console.SetCursorPosition(3, item + 1);
-                    }
-                }
-
+                var top = Console.CursorTop - iteration.Steps.Count;
+                Console.SetCursorPosition(0, top);
             }
 
+            var counter = 0;
+            var defaultColor = Console.ForegroundColor;
+
+            foreach (var step in iteration.Steps)
+            {
+                if (counter == selected)
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                }
+                Console.WriteLine((counter == selected ? "> " : "  ") + step.Title);
+
+                Console.ForegroundColor = defaultColor;
+                counter++;
+            }
         }
     }
+
+
 }
