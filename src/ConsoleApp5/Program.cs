@@ -102,15 +102,18 @@ namespace ConsoleApp5
 
 
             var index = 1;
-            foreach( var iteration in iterations ){
+            foreach (var iteration in iterations)
+            {
 
-                if( iteration.IsSelectable ){
+                if (iteration.IsSelectable)
+                {
                     Console.WriteLine($"Selected Step {index} is  : " + iteration.SelectedStep.Title);
                 }
-                else{
+                else
+                {
                     Console.WriteLine($"Selected Step {index} is  : " + iteration.InputValue);
                 }
-
+                index++;
             }
 
 
