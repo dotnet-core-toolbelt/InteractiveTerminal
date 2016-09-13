@@ -1,5 +1,5 @@
---temp-output:/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/obj/Debug/netcoreapp1.0/
---out:/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/bin/Debug/netcoreapp1.0/ConsoleApp5.dll
+--temp-output:/Users/shahab/Desktop/InteractiveConsole/src/InteractiveConsole/obj/Debug/netcoreapp1.0/
+--out:/Users/shahab/Desktop/InteractiveConsole/src/InteractiveConsole/bin/Debug/netcoreapp1.0/InteractiveConsole.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -7,8 +7,8 @@
 --suppress-warning:CS1702
 --suppress-warning:CS1705
 --optimize:False
---emit-entry-point:True
---output-name:ConsoleApp5
+--emit-entry-point:False
+--output-name:InteractiveConsole
 --file-version:1.0.0.0
 --version:1.0.0.0
 --informational-version:1.0.0
@@ -86,7 +86,6 @@
 --reference:/Users/shahab/.nuget/packages/System.Threading.Timer/4.0.1/ref/netstandard1.2/System.Threading.Timer.dll
 --reference:/Users/shahab/.nuget/packages/System.Xml.ReaderWriter/4.0.11/ref/netstandard1.3/System.Xml.ReaderWriter.dll
 --reference:/Users/shahab/.nuget/packages/System.Xml.XDocument/4.0.11/ref/netstandard1.3/System.Xml.XDocument.dll
-/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/Iteration.cs
-/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/Program.cs
-/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/Step.cs
-/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/Properties/AssemblyInfo.cs
+/Users/shahab/Desktop/InteractiveConsole/src/InteractiveConsole/InteractiveConsole.cs
+/Users/shahab/Desktop/InteractiveConsole/src/InteractiveConsole/Iteration.cs
+/Users/shahab/Desktop/InteractiveConsole/src/InteractiveConsole/Step.cs

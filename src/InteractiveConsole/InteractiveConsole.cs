@@ -1,45 +1,50 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace ConsoleApp5
+namespace Oxygen
 {
-    public class Program
+
+    public class InteractiveConsole
     {
 
+        private List<Iteration> iterations;
 
-        public static void Main(string[] args)
+        public IEnumerable<Iteration> Iterations
         {
+            get
+            {
+                return this.iterations;
+            }
+        }
+
+        public InteractiveConsole()
+        {
+            this.iterations = new List<Iteration>();
+        }
+
+        public void Add(Iteration iteration)
+        {
+            this.iterations.Add(iteration);
+        }
+        public void Add(params Iteration[] iterations)
+        {
+            this.iterations.AddRange(iterations);
+        }
+
+
+        public void Run()
+        {
+
             Console.Clear();
             Console.CursorVisible = false;
 
-            List<Iteration> iterations = new List<Iteration>();
 
-            Iteration first = new Iteration("What type of application do you want to create?");
-            first.Steps.Add(new Step("Empty Web Application?"));
-            first.Steps.Add(new Step("Console Application?"));
-            first.Steps.Add(new Step("Web Application?"));
-            first.Steps.Add(new Step("Web API Application?"));
-            first.Steps.Add(new Step("Class Library?"));
-
-            Iteration second = new Iteration("What kind of UI framework do you want?");
-            second.Steps.Add(new Step("Bootstrap"));
-            second.Steps.Add(new Step("Semantic UI"));
-
-
-            Iteration third = new Iteration("What's the name of your application?");
-
-
-            iterations.Add(first);
-            iterations.Add(second);
-            iterations.Add(third);
-
-            var iterationNo = 0;
-            foreach (var iteration in iterations)
+            for (int iterationNo = 0; iterationNo < this.iterations.Count; iterationNo++)
             {
-                iterationNo++;
+                var iteration = this.iterations[iterationNo];
+
+
 
                 var defaultColor = Console.ForegroundColor;
 
@@ -55,7 +60,7 @@ namespace ConsoleApp5
 
                     var selectedId = 0;
 
-                    showList(iteration, selectedId);
+                    printList(iteration, selectedId);
 
                     while (true)
                     {
@@ -80,10 +85,10 @@ namespace ConsoleApp5
                             break;
                         }
 
-                        showList(iteration, selectedId, true);
+                        printList(iteration, selectedId, true);
                     }
 
-                    clearIteration(iteration, iterationNo);
+                    clearIterations(iteration, iterationNo + 1);
 
                 }
                 else
@@ -99,30 +104,9 @@ namespace ConsoleApp5
 
 
             }
-
-
-            var index = 1;
-            foreach (var iteration in iterations)
-            {
-
-                if (iteration.IsSelectable)
-                {
-                    Console.WriteLine($"Selected Step {index} is  : " + iteration.SelectedStep.Title);
-                }
-                else
-                {
-                    Console.WriteLine($"Selected Step {index} is  : " + iteration.InputValue);
-                }
-                index++;
-            }
-
-
-            Console.WriteLine("Press any key to exit...");
-            Console.Read();
-
         }
 
-        private static void clearIteration(Iteration iteration, int iterationNo)
+        private void clearIterations(Iteration iteration, int iterationNo)
         {
             var startLine = Console.CursorTop - iteration.Steps.Count - iterationNo;
 
@@ -144,7 +128,7 @@ namespace ConsoleApp5
 
         }
 
-        private static void showList(Iteration iteration, int selected, bool isReshow = false)
+        private void printList(Iteration iteration, int selected, bool isReshow = false)
         {
 
             if (isReshow)
@@ -168,7 +152,11 @@ namespace ConsoleApp5
                 counter++;
             }
         }
+
+
     }
+
+
 
 
 }

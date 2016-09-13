@@ -7,8 +7,8 @@
 -debug:portable
 -nostdlib
 -nologo
-"/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/obj/Debug/netcoreapp1.0/dotnet-compile.assemblyinfo.cs"
--out:"/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/bin/Debug/netcoreapp1.0/ConsoleApp5.dll"
+"/Users/shahab/Desktop/InteractiveConsole/test/InteractiveConsole.Test/obj/Debug/netcoreapp1.0/dotnet-compile.assemblyinfo.cs"
+-out:"/Users/shahab/Desktop/InteractiveConsole/test/InteractiveConsole.Test/bin/Debug/netcoreapp1.0/InteractiveConsole.Test.dll"
 -r:"/Users/shahab/.nuget/packages/Microsoft.CSharp/4.0.1/ref/netstandard1.0/Microsoft.CSharp.dll"
 -r:"/Users/shahab/.nuget/packages/Microsoft.VisualBasic/10.0.1/ref/netstandard1.1/Microsoft.VisualBasic.dll"
 -r:"/Users/shahab/.nuget/packages/Microsoft.Win32.Primitives/4.0.1/ref/netstandard1.3/Microsoft.Win32.Primitives.dll"
@@ -82,7 +82,5 @@
 -r:"/Users/shahab/.nuget/packages/System.Threading.Timer/4.0.1/ref/netstandard1.2/System.Threading.Timer.dll"
 -r:"/Users/shahab/.nuget/packages/System.Xml.ReaderWriter/4.0.11/ref/netstandard1.3/System.Xml.ReaderWriter.dll"
 -r:"/Users/shahab/.nuget/packages/System.Xml.XDocument/4.0.11/ref/netstandard1.3/System.Xml.XDocument.dll"
-"/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/Iteration.cs"
-"/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/Program.cs"
-"/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/Step.cs"
-"/Users/shahab/Desktop/ConsoleApp5/src/ConsoleApp5/Properties/AssemblyInfo.cs"
+-r:"/Users/shahab/Desktop/InteractiveConsole/src/InteractiveConsole/bin/Debug/netcoreapp1.0/InteractiveConsole.dll"
+"/Users/shahab/Desktop/InteractiveConsole/test/InteractiveConsole.Test/Program.cs"
