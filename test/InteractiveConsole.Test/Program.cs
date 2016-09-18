@@ -30,11 +30,22 @@ namespace ConsoleApp5
             SimpleQuestion third = new SimpleQuestion("What's the name of your application?");
 
 
+
+            ScrollableMultipleChoice fourth = new ScrollableMultipleChoice("What type of application do you want to create?" , 2);
+            fourth.Add(new Choice("A"));
+            fourth.Add(new Choice("B"));
+            fourth.Add(new Choice("C"));
+            fourth.Add(new Choice("D"));
+            fourth.Add(new Choice("E"));
+            fourth.Add(new Choice("F"));
+
+
             InteractiveConsole console = new InteractiveConsole();
 
-            console.Add(first);
-            console.Add(second);
-            console.Add(third);
+            // console.Add(first);
+            // console.Add(third);
+            // console.Add(second);
+            console.Add(fourth);
 
 
             console.Run();

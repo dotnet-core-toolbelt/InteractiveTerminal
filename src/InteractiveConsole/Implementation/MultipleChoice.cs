@@ -46,7 +46,7 @@ namespace LifeResource.Terminal
             Console.WriteLine(this.Question + " ( use arrow keys ) ");
         }
 
-        public void PrintOptions(int selectedId, bool isReshow)
+        public virtual void PrintOptions(int selectedId, bool isReshow)
         {
 
 
@@ -56,7 +56,7 @@ namespace LifeResource.Terminal
                 Console.SetCursorPosition(0, top);
             }
 
-            var counter = 0;
+            
             var defaultColor = Console.ForegroundColor;
 
             foreach (var option in this.Options)
@@ -73,7 +73,7 @@ namespace LifeResource.Terminal
 
                 Console.ForegroundColor = defaultColor;
 
-                counter++;
+            
             }
 
             if (isReshow)
@@ -109,7 +109,15 @@ namespace LifeResource.Terminal
         }
         public int Order { get; set; }
 
-        public void Clear()
+        public virtual int ItemsToShow
+        {
+            get
+            {
+                return this.Options.Count;
+            }
+        }
+
+        public virtual void Clear()
         {
 
             int iterationNo = this.Order + 1;
