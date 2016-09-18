@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LifeResource
+namespace LifeResource.Terminal
 {
 
     public class Iteration

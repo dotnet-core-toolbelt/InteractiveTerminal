@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LifeResource
+namespace LifeResource.Terminal
 {
 
     public class InteractiveConsole
