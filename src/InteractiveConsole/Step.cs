@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Oxygen
+namespace LifeResource
 {
 
     public class Step

@@ -11,6 +11,20 @@
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "restore",
+            "args": [
+                "${workspaceRoot}/test/InteractiveConsole.Test/project.json"
+            ]
+        },
+        {
+            "taskName": "run",
+            "args": [
+                "${workspaceRoot}/test/InteractiveConsole.Test/project.json"
+            ],
+            "isTestCommand": true,
+            "problemMatcher": "$msCompile"
         }
     ]
 }
