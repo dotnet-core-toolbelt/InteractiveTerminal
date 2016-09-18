@@ -4,32 +4,6 @@ using System.Collections.Generic;
 namespace LifeResource.Terminal
 {
 
-    public class SimpleQuestion : IQuestion
-    {
-public int Order{get;set;}
-        public SimpleQuestion(string question)
-        {
-            this.Question = question;
-        }
-        public object Answer
-        {
-            get; set;
-        }
-
-        public string Question
-        {
-            get; set;
-        }
-
-        public void Print(bool repaint = false)
-        {
-            Console.CursorVisible = true;
-            Console.Write(this.Question + "  ");
-            var value = Console.ReadLine();
-            this.Answer = value;
-            Console.CursorVisible = false;
-        }
-    }
 
     public class MultipleChoice : IMultipleChoiceQuestion
     {
@@ -163,32 +137,4 @@ public int Order{get;set;}
     }
 
 
-    public class Iteration
-    {
-
-
-        public string Question { get; private set; }
-
-        public IList<Step> Steps { get; set; }
-
-        public Step SelectedStep { get; set; }
-
-        public string InputValue { get; set; }
-
-        public bool IsSelectable
-        {
-            get
-            {
-                return this.Steps.Count > 0;
-            }
-        }
-
-        public Iteration(string question)
-        {
-
-            this.Question = question;
-            this.Steps = new List<Step>();
-        }
-
-    }
 }

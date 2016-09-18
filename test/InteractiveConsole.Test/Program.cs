@@ -15,16 +15,16 @@ namespace ConsoleApp5
         {
 
             MultipleChoice first = new MultipleChoice("What type of application do you want to create?");
-            first.Add(new Step("Empty Web Application?"));
-            first.Add(new Step("Console Application?"));
-            first.Add(new Step("Web Application?"));
-            first.Add(new Step("Web API Application?"));
-            first.Add(new Step("Class Library?"));
+            first.Add(new Choice("Empty Web Application?"));
+            first.Add(new Choice("Console Application?"));
+            first.Add(new Choice("Web Application?"));
+            first.Add(new Choice("Web API Application?"));
+            first.Add(new Choice("Class Library?"));
 
 
             MultipleChoice second = new MultipleChoice("What kind of UI framework do you want?");
-            second.Add(new Step("Bootstrap"));
-            second.Add(new Step("Semantic UI"));
+            second.Add(new Choice("Bootstrap"));
+            second.Add(new Choice("Semantic UI"));
 
 
             SimpleQuestion third = new SimpleQuestion("What's the name of your application?");

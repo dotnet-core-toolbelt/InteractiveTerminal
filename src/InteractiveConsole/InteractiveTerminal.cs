@@ -49,15 +49,9 @@ namespace LifeResource.Terminal
 
                 if (iteration is IMultipleChoiceQuestion)
                 {
-
                     (iteration as IMultipleChoiceQuestion).Print();
 
-                    var selectedId = 0;
-
                     (iteration as IMultipleChoiceQuestion).PrintOptions();
-
-
-
                 }
                 else
                 {

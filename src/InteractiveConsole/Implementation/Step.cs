@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace LifeResource.Terminal
 {
 
-    public class Step : IOption
+    public class Choice : IOption
     {
 
         public string Title { get; set; }
@@ -15,12 +15,12 @@ namespace LifeResource.Terminal
         }
 
 
-        public Step() : this("")
+        public Choice() : this("")
         {
 
         }
 
-        public Step(string title)
+        public Choice(string title)
         {
             this.Title = title;
 
