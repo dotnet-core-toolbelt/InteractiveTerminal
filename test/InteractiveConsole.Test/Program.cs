@@ -13,20 +13,21 @@ namespace ConsoleApp5
 
         public static void Main(string[] args)
         {
-            
-            Iteration first = new Iteration("What type of application do you want to create?");
-            first.Steps.Add(new Step("Empty Web Application?"));
-            first.Steps.Add(new Step("Console Application?"));
-            first.Steps.Add(new Step("Web Application?"));
-            first.Steps.Add(new Step("Web API Application?"));
-            first.Steps.Add(new Step("Class Library?"));
 
-            Iteration second = new Iteration("What kind of UI framework do you want?");
-            second.Steps.Add(new Step("Bootstrap"));
-            second.Steps.Add(new Step("Semantic UI"));
+            MultipleChoice first = new MultipleChoice("What type of application do you want to create?");
+            first.Add(new Step("Empty Web Application?"));
+            first.Add(new Step("Console Application?"));
+            first.Add(new Step("Web Application?"));
+            first.Add(new Step("Web API Application?"));
+            first.Add(new Step("Class Library?"));
 
 
-            Iteration third = new Iteration("What's the name of your application?");
+            MultipleChoice second = new MultipleChoice("What kind of UI framework do you want?");
+            second.Add(new Step("Bootstrap"));
+            second.Add(new Step("Semantic UI"));
+
+
+            SimpleQuestion third = new SimpleQuestion("What's the name of your application?");
 
 
             InteractiveConsole console = new InteractiveConsole();
@@ -34,8 +35,8 @@ namespace ConsoleApp5
             console.Add(first);
             console.Add(second);
             console.Add(third);
-            
-            
+
+
             console.Run();
 
 
@@ -43,13 +44,13 @@ namespace ConsoleApp5
             foreach (var iteration in console.Iterations)
             {
 
-                if (iteration.IsSelectable)
+                if (iteration is IMultipleChoiceQuestion)
                 {
-                    Console.WriteLine($"Selected Step {index} is  : " + iteration.SelectedStep.Title);
+                    Console.WriteLine($"Selected Step {index} is  : " + ( iteration.Answer as IOption ).Order);
                 }
                 else
                 {
-                    Console.WriteLine($"Selected Step {index} is  : " + iteration.InputValue);
+                    Console.WriteLine($"Selected Step {index} is  : " + iteration.Answer);
                 }
                 index++;
             }
@@ -60,7 +61,7 @@ namespace ConsoleApp5
 
         }
 
-        
+
     }
 
 

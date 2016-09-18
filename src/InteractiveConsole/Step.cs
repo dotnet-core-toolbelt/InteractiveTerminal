@@ -1,14 +1,18 @@
+using System;
 using System.Collections.Generic;
 
 namespace LifeResource.Terminal
 {
 
-    public class Step
+    public class Step : IOption
     {
 
-        public string Title { get; private set; }
+        public string Title { get; set; }
 
-        public IList<Step> Next { get; set; }
+        public int Order
+        {
+            get; set;
+        }
 
 
         public Step() : this("")
@@ -20,11 +24,12 @@ namespace LifeResource.Terminal
         {
             this.Title = title;
 
-            this.Next = new List<Step>();
-
         }
 
-
+        public void Print(bool repaint = false)
+        {
+            Console.WriteLine(this.Title);
+        }
     }
 
 }
