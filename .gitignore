@@ -1,4 +1,5 @@
-src/bin
-src/obj
-test/bin
-test/obj
+
+src/InteractiveConsole/bin
+src/InteractiveConsole/obj
+test/InteractiveConsole.Test/bin
+test/InteractiveConsole.Test/obj
