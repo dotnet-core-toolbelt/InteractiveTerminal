@@ -42,9 +42,9 @@ namespace ConsoleApp5
 
             InteractiveConsole console = new InteractiveConsole();
 
-            // console.Add(first);
-            // console.Add(third);
-            // console.Add(second);
+            console.Add(first);
+            console.Add(third);
+            console.Add(second);
             console.Add(fourth);
 
 
