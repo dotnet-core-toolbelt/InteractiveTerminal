@@ -121,9 +121,11 @@ namespace LifeResource.Terminal
                 Console.Write(new String(' ', Console.BufferWidth));
             }
 
-            var top = Console.CursorTop - this.Options.Count + iterationNo - 1;
+            // var top = Console.CursorTop - this.Options.Count + iterationNo - 1;
 
-            if (top < iterationNo) top = iterationNo;
+            // if (top < iterationNo) top = iterationNo;
+
+            var top  = iterationNo;
 
             Console.SetCursorPosition(0, top);
         }

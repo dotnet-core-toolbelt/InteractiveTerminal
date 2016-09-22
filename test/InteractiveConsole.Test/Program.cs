@@ -31,7 +31,7 @@ namespace ConsoleApp5
 
 
 
-            ScrollableMultipleChoice fourth = new ScrollableMultipleChoice("What type of application do you want to create?" , 2);
+            ScrollableMultipleChoice fourth = new ScrollableMultipleChoice("Which alphabet do you like?" , 2);
             fourth.Add(new Choice("A"));
             fourth.Add(new Choice("B"));
             fourth.Add(new Choice("C"));
