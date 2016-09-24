@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using InteractiveTerminal.Interface;
 
-namespace LifeResource.Terminal
+namespace InteractiveTerminal.Implementation
 {
 
 

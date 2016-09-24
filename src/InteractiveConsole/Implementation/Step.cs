@@ -1,7 +1,7 @@
 using System;
-using System.Collections.Generic;
+using InteractiveTerminal.Interface;
 
-namespace LifeResource.Terminal
+namespace InteractiveTerminal.Implementation
 {
 
     public class Choice : IOption

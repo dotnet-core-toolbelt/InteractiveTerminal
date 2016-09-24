@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using LifeResource.Terminal;
+using InteractiveTerminal.Implementation;
+using InteractiveTerminal.Interface;
 
-namespace ConsoleApp5
+namespace InteractiveTerminal.Test
 {
     public class Program
     {
-
-
         public static void Main(string[] args)
         {
 
@@ -31,7 +26,7 @@ namespace ConsoleApp5
 
 
 
-            ScrollableMultipleChoice fourth = new ScrollableMultipleChoice("Which alphabet do you like?" , 2);
+            ScrollableMultipleChoice fourth = new ScrollableMultipleChoice("Which alphabet do you like?", 2);
             fourth.Add(new Choice("A"));
             fourth.Add(new Choice("B"));
             fourth.Add(new Choice("C"));
@@ -40,24 +35,24 @@ namespace ConsoleApp5
             fourth.Add(new Choice("F"));
 
 
-            InteractiveConsole console = new InteractiveConsole();
+            Terminal terminal = new Terminal();
 
-            console.Add(first);
-            console.Add(third);
-            console.Add(second);
-            console.Add(fourth);
+            terminal.Add(first);
+            terminal.Add(third);
+            terminal.Add(second);
+            terminal.Add(fourth);
 
 
-            console.Run();
+            terminal.Run();
 
 
             var index = 1;
-            foreach (var iteration in console.Iterations)
+            foreach (var iteration in terminal.Iterations)
             {
 
                 if (iteration is IMultipleChoiceQuestion)
                 {
-                    Console.WriteLine($"Selected Step {index} is  : " + ( iteration.Answer as IOption ).Order);
+                    Console.WriteLine($"Selected Step {index} is  : " + (iteration.Answer as IOption).Order);
                 }
                 else
                 {

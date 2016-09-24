@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using InteractiveTerminal.Interface;
 
-namespace LifeResource.Terminal
+namespace InteractiveTerminal
 {
 
-    public class InteractiveConsole
+    public class Terminal
     {
 
         private List<IQuestion> iterations;
@@ -18,7 +18,7 @@ namespace LifeResource.Terminal
             }
         }
 
-        public InteractiveConsole()
+        public Terminal()
         {
             this.iterations = new List<IQuestion>();
         }

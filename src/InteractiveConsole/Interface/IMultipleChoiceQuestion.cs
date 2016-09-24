@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LifeResource.Terminal
+namespace InteractiveTerminal.Interface
 {
 
 

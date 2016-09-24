@@ -1,6 +1,6 @@
 using System;
 
-namespace LifeResource.Terminal
+namespace InteractiveTerminal.Implementation
 {
 
     public class ScrollableMultipleChoice : MultipleChoice
