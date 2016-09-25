@@ -1,9 +1,6 @@
-using System.Collections.Generic;
-
-namespace LifeResource.Terminal
+namespace InteractiveTerminal.Interface
 {
-
- public interface IOption : IPrintable
+    public interface IOption : IPrintable
     {
         int Order { get; set; }
         string Title { get; set; }

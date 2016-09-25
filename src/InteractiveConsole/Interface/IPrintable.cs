@@ -1,7 +1,7 @@
 
 
 
-namespace LifeResource.Terminal
+namespace InteractiveTerminal.Interface
 {
 
 

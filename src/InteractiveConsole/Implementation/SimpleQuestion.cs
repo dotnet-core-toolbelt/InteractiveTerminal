@@ -1,12 +1,12 @@
 using System;
-using System.Collections.Generic;
+using InteractiveTerminal.Interface;
 
-namespace LifeResource.Terminal
+namespace InteractiveTerminal.Implementation
 {
 
-public class SimpleQuestion : IQuestion
+    public class SimpleQuestion : IQuestion
     {
-        public int Order{get;set;}
+        public int Order { get; set; }
         public SimpleQuestion(string question)
         {
             this.Question = question;
