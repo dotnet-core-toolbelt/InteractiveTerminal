@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v1.0",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v1.0": {
+      "InteractiveTerminal.Test/1.0.0": {
+        "dependencies": {
+          "InteractiveTerminal": "1.0.1"
+        },
+        "runtime": {
+          "InteractiveTerminal.Test.dll": {}
+        }
+      },
+      "InteractiveTerminal/1.0.1": {
+        "runtime": {
+          "InteractiveTerminal.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "InteractiveTerminal.Test/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InteractiveTerminal/1.0.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

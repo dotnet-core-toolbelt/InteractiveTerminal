@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/test/InteractiveConsole.Test/project.json"
+                "${workspaceRoot}/test/InteractiveTerminal.Test/project.json"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
@@ -15,7 +15,7 @@
         {
             "taskName": "restore",
             "args": [
-                "${workspaceRoot}/test/InteractiveConsole.Test/project.json"
+                "${workspaceRoot}/test/InteractiveTerminal.Test/project.json"
             ]
         },
         {
