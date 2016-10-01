@@ -140,11 +140,20 @@ namespace InteractiveTerminal.Implementation
             // if (top < iterationNo) top = iterationNo;
             var top = iterationNo;
 
+            this.PrintAnswer();
+
             Console.SetCursorPosition(0, top);
         }
 
+        public virtual void PrintAnswer()
+        {
+            Console.CursorTop = Console.CursorTop - this.Options.Count - 1;
+            Console.CursorLeft = this.Question.Length + 22;
 
+            var defaultColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine((this.Answer as IOption).Title.ToString());
+            Console.ForegroundColor = defaultColor;
+        }
     }
-
-
 }

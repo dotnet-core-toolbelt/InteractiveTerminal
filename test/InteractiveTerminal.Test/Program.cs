@@ -9,7 +9,6 @@ namespace InteractiveTerminal.Test
         public static void Main(string[] args)
         {
 
-            Console.ReadLine();
             MultipleChoice first = new MultipleChoice("What type of application do you want to create?");
             first.Add(new Choice("Empty Web Application?"));
             first.Add(new Choice("Console Application?"));

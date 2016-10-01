@@ -8,6 +8,8 @@ namespace InteractiveTerminal.Interface
         int Order {get;set;}
         object Answer { get; set; }
         string Question { get; set; }
+
+        void PrintAnswer();
     }
 
 

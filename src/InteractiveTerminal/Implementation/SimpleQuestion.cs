@@ -28,6 +28,17 @@ namespace InteractiveTerminal.Implementation
             var value = Console.ReadLine();
             this.Answer = value;
             Console.CursorVisible = false;
+            this.PrintAnswer();
+        }
+
+        public void PrintAnswer()
+        {
+            Console.CursorTop--;
+            Console.CursorLeft = this.Question.Length + 4;
+            var defaultColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(this.Answer.ToString());
+            Console.ForegroundColor = defaultColor;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using InteractiveTerminal.Interface;
 
 namespace InteractiveTerminal.Implementation
 {
@@ -30,9 +31,10 @@ namespace InteractiveTerminal.Implementation
             var start = this.currentIndex;
             var end = this.currentIndex + this.ItemsToShow;
 
-            if (end > this.Options.Count){
-                
-                start = this.Options.Count - this.ItemsToShow; 
+            if (end > this.Options.Count)
+            {
+
+                start = this.Options.Count - this.ItemsToShow;
                 end = this.Options.Count;
             }
 
@@ -52,7 +54,6 @@ namespace InteractiveTerminal.Implementation
                 Console.ForegroundColor = defaultColor;
 
             }
-
 
             Console.WriteLine("--------------------------------------------------");
 
@@ -76,7 +77,7 @@ namespace InteractiveTerminal.Implementation
                 }
 
                 if (this.currentIndex < 0) this.currentIndex = 0;
-                if( this.currentIndex >= this.Options.Count ) this.currentIndex--;
+                if (this.currentIndex >= this.Options.Count) this.currentIndex--;
 
                 if (selectedId >= this.ItemsToShow) selectedId = this.ItemsToShow - 1;
                 if (selectedId < 0) selectedId = 0;
@@ -121,15 +122,22 @@ namespace InteractiveTerminal.Implementation
                 Console.Write(new String(' ', Console.BufferWidth));
             }
 
-            // var top = Console.CursorTop - this.Options.Count + iterationNo - 1;
+            var top = iterationNo;
 
-            // if (top < iterationNo) top = iterationNo;
-
-            var top  = iterationNo;
+            this.PrintAnswer();
 
             Console.SetCursorPosition(0, top);
         }
 
-    }
+        public override void PrintAnswer()
+        {
+            Console.CursorTop = Console.CursorTop - this.Options.Count - 2;
+            Console.CursorLeft = this.Question.Length + 22;
 
+            var defaultColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine((this.Answer as IOption).Title.ToString());
+            Console.ForegroundColor = defaultColor;
+        }
+    }
 }

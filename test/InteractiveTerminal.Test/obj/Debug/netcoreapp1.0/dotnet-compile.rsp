@@ -1,5 +1,5 @@
---temp-output:e:\git-projects\InteractiveConsole\test\InteractiveTerminal.Test\obj\Debug\netcoreapp1.0\
---out:e:\git-projects\InteractiveConsole\test\InteractiveTerminal.Test\bin\Debug\netcoreapp1.0\InteractiveTerminal.Test.dll
+--temp-output:e:\git-projects\InteractiveTerminal\test\InteractiveTerminal.Test\obj\Debug\netcoreapp1.0\
+--out:e:\git-projects\InteractiveTerminal\test\InteractiveTerminal.Test\bin\Debug\netcoreapp1.0\InteractiveTerminal.Test.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -86,5 +86,5 @@
 --reference:C:\Users\s.ganji\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\s.ganji\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\s.ganji\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---reference:e:\git-projects\InteractiveConsole\src\InteractiveTerminal\bin\Debug\netstandard1.6\InteractiveTerminal.dll
-e:\git-projects\InteractiveConsole\test\InteractiveTerminal.Test\Program.cs
+--reference:e:\git-projects\InteractiveTerminal\src\InteractiveTerminal\bin\Debug\netstandard1.6\InteractiveTerminal.dll
+e:\git-projects\InteractiveTerminal\test\InteractiveTerminal.Test\Program.cs
